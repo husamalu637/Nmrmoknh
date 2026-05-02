@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدى الطفولة | النمر المقنع</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --accent: #ff9800;
+            --bg: #0b0f19;
+            --card: #161e2e;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .main-container {
+            max-width: 900px;
+            width: 95%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .video-display-area {
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+            margin-bottom: 30px;
+            display: none;
+            position: relative;
+        }
+
+        .responsive-iframe {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 15px;
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .ep-btn {
+            background: #252f44;
+            color: white;
+            border: 2px solid transparent;
+            padding: 15px 0;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .ep-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+            border-color: white;
+        }
+
+        .ep-btn.active {
+            background: var(--accent);
+            color: black;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .info-text {
+            margin-top: 20px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            opacity: 0.4;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎬 صدى الطفولة</h1>
+    <p>اختر رقم الحلقة وابدأ المشاهدة فوراً</p>
+</header>
+
+<div class="main-container">
+    
+    <div id="videoPlayer" class="video-display-area">
+        <div class="responsive-iframe">
+            <iframe id="mainIframe" src="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+        </div>
+        <div id="episodeTitle" style="padding: 10px; background: var(--card); font-weight: bold;"></div>
+    </div>
+
+    <h2 id="status-msg">اضغط على رقم الحلقة للمشاهدة:</h2>
+
+    <div class="episodes-grid" id="buttonsGrid"></div>
+
+    <p class="info-text">حلقات النمر المقنع متوفرة الآن بجودة عالية</p>
+</div>
+
+<script>
+    // مصفوفة الحلقات تحتوي الآن فقط على النمر المقنع
+    const episodes = [
+        { n: 1, src: "https://meyon.com.ye/videos/embed/525937f7-adfb-41c2-96c5-9c03f7fc9f62" },
+        { n: 2, src: "https://meyon.com.ye/videos/embed/ac366962-bf37-45ce-98dd-388e4d3cd95a" },
+        { n: 3, src: "https://meyon.com.ye/videos/embed/87d7e04a-9bc2-4079-b931-74337b258a1b" },
+        { n: 4, src: "https://meyon.com.ye/videos/embed/e741810c-93c4-43ba-932a-0f94b6dce796" },
+        { n: 5, src: "https://meyon.com.ye/videos/embed/89eec8e3-4a46-4285-ac78-95b9e4b4ff22" },
+        { n: 6, src: "https://meyon.com.ye/videos/embed/42d78121-6f62-4679-9752-61d4265446dc" },
+        { n: 7, src: "https://meyon.com.ye/videos/embed/6b439d92-123f-446b-b0bc-76bd499cf6e3" },
+        { n: 8, src: "https://meyon.com.ye/videos/embed/b1eaa798-5dc7-4449-9439-bdc050f9b83f" },
+        { n: 9, src: "https://meyon.com.ye/videos/embed/6dc38e0a-49f2-4f0f-9969-e39fd030ebab" },
+        { n: 10, src: "https://meyon.com.ye/videos/embed/74a4fc37-1d4c-4e47-ae7e-ff0774fe040f" },
+        { n: 11, src: "https://meyon.com.ye/videos/embed/4e6337a4-c792-41d4-aba6-0f4128e8d673" },
+        { n: 12, src: "https://meyon.com.ye/videos/embed/f48197c0-745f-479b-affa-6169ee8c58b6" },
+        { n: 13, src: "https://meyon.com.ye/videos/embed/f75ba86e-2989-48d0-b8b1-5d753c2c893e" },
+        { n: 14, src: "https://meyon.com.ye/videos/embed/cdf3b125-53b0-4f02-b84d-6ddab0ea5dd8" },
+        { n: 15, src: "https://meyon.com.ye/videos/embed/c8c7a7a9-e5d3-4a56-8399-3a370e5cda7c" }
+    ];
+
+    const grid = document.getElementById('buttonsGrid');
+    const player = document.getElementById('videoPlayer');
+    const iframe = document.getElementById('mainIframe');
+    const titleDisp = document.getElementById('episodeTitle');
+
+    episodes.forEach(ep => {
+        const btn = document.createElement('button');
+        btn.className = 'ep-btn';
+        btn.innerText = ep.n;
+        btn.onclick = function() {
+            loadEpisode(ep.n, ep.src, btn);
+        };
+        grid.appendChild(btn);
+    });
+
+    function loadEpisode(num, url, btnElement) {
+        // فتح الإعلان الخاص بك
+        window.open('https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a', '_blank');
+        
+        player.style.display = 'block';
+        iframe.src = url;
+        titleDisp.innerText = "أنت تشاهد الآن: النمر المقنع - الحلقة " + num;
+        
+        document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
+        btnElement.classList.add('active');
+        
+        player.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+</script>
+
+<footer>جميع الحقوق محفوظة - صدى الطفولة &copy; 2026</footer>
+</body>
+</html>
