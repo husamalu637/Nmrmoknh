@@ -49,18 +49,18 @@
 </div>
 
 <div class="main-container">
-    <a href="index.html" class="back-home-btn">⬅ العودة إلى الرئيسية</a>
+    <a href="https://husamalu637.github.io/Sasuke/" class="back-home-btn">⬅ العودة إلى الرئيسية</a>
 
     <div class="video-wrapper-outer">
         <div id="videoPlayer" class="video-display-area">
-            <div class="responsive-iframe"><iframe id="mainIframe" src="" allowfullscreen allow="autoplay; encrypted-media" scrolling="no" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe></div>
+            <div class="responsive-iframe"><iframe id="mainIframe" src="" allowfullscreen allow="autoplay; encrypted-media" scrolling="no"></iframe></div>
             <div id="episodeTitle" style="padding: 10px; background: var(--card); font-weight: bold;"></div>
         </div>
     </div>
 
     <h2>اضغط على رقم الحلقة للمشاهدة:</h2>
     <div class="episodes-grid" id="buttonsGrid"></div>
-    <p class="info-text">جميع حلقات النمر المقنع الـ 15 متوفرة وتعمل بكفاءة عالية</p>
+    <p class="info-text">جميع حلقات النمر المقنع الـ 105 متوفرة وتعمل بكفاءة عالية</p>
 </div>
 
 <!-- إعلان البنر السفلي -->
@@ -74,23 +74,113 @@
 <script>
     const popupAdLink = "https://www.profitablecpmratenetwork.com/e41dj2h87?key=bef514b5ca3fa945e7a3b60e4a9ef21a";
 
-    // روابط الـ 15 حلقة للنمر المقنع
+    // روابط الـ 105 حلقة الخاصة بمسلسل النمر المقنع
     const episodeLinks = [
-        "https://meyon.com.ye/videos/embed/525937f7-adfb-41c2-96c5-9c03f7fc9f62", // 1
-        "https://meyon.com.ye/videos/embed/ac366962-bf37-45ce-98dd-388e4d3cd95a", // 2
-        "https://meyon.com.ye/videos/embed/87d7e04a-9bc2-4079-b931-74337b258a1b", // 3
-        "https://meyon.com.ye/videos/embed/e741810c-93c4-43ba-932a-0f94b6dce796", // 4
-        "https://meyon.com.ye/videos/embed/89eec8e3-4a46-4285-ac78-95b9e4b4ff22", // 5
-        "https://meyon.com.ye/videos/embed/42d78121-6f62-4679-9752-61d4265446dc", // 6
-        "https://meyon.com.ye/videos/embed/6b439d92-123f-446b-b0bc-76bd499cf6e3", // 7
-        "https://meyon.com.ye/videos/embed/b1eaa798-5dc7-4449-9439-bdc050f9b83f", // 8
-        "https://meyon.com.ye/videos/embed/6dc38e0a-49f2-4f0f-9969-e39fd030ebab", // 9
-        "https://meyon.com.ye/videos/embed/74a4fc37-1d4c-4e47-ae7e-ff0774fe040f", // 10
-        "https://meyon.com.ye/videos/embed/4e6337a4-c792-41d4-aba6-0f4128e8d673", // 11
-        "https://meyon.com.ye/videos/embed/f48197c0-745f-479b-affa-6169ee8c58b6", // 12
-        "https://meyon.com.ye/videos/embed/f75ba86e-2989-48d0-b8b1-5d753c2c893e", // 13
-        "https://meyon.com.ye/videos/embed/cdf3b125-53b0-4f02-b84d-6ddab0ea5dd8", // 14
-        "https://meyon.com.ye/videos/embed/c8c7a7a9-e5d3-4a56-8399-3a370e5cda7c"  // 15
+        "https://www.youtube.com/embed/yRSS3qZPbxs",
+        "https://www.youtube.com/embed/d5hVF3wWg4A",
+        "https://www.youtube.com/embed/cMHMoQxDXE0",
+        "https://www.youtube.com/embed/KpF8ZbLnJww",
+        "https://www.youtube.com/embed/ENU8g2kwVEs",
+        "https://www.youtube.com/embed/fDi83B7jWZU",
+        "https://www.youtube.com/embed/5wKX_ACR1Dg",
+        "https://www.youtube.com/embed/BKCuHVvossc",
+        "https://www.youtube.com/embed/LE7sKlwAme0",
+        "https://www.youtube.com/embed/BsIDsL1kKDM",
+        "https://www.youtube.com/embed/u1dm5QLEHaE",
+        "https://www.youtube.com/embed/S-0b6EdnWU0",
+        "https://www.youtube.com/embed/NANJWM30adk",
+        "https://www.youtube.com/embed/AkE4J8ONGx8",
+        "https://www.youtube.com/embed/nbiKZjUNGn8",
+        "https://www.youtube.com/embed/Ppv66gtYNRc",
+        "https://www.youtube.com/embed/ev_ZjASbKp4",
+        "https://www.youtube.com/embed/uOLXK7pasXc",
+        "https://www.youtube.com/embed/kXizbNfKOWM",
+        "https://www.youtube.com/embed/m3boLBnhY9g",
+        "https://www.youtube.com/embed/3OgARZ9BM2E",
+        "https://www.youtube.com/embed/zVujYzXN9lA",
+        "https://www.youtube.com/embed/R9vP2ZcZzJg",
+        "https://www.youtube.com/embed/ZENDtPIq_EY",
+        "https://www.youtube.com/embed/WUQZEePNIOg",
+        "https://www.youtube.com/embed/I3vaDpZ3o6o",
+        "https://www.youtube.com/embed/DsbhiqFTNX8",
+        "https://www.youtube.com/embed/NG1N3NnRSBQ",
+        "https://www.youtube.com/embed/Cr8asooi8pQ",
+        "https://www.youtube.com/embed/dydVM-eyoTk",
+        "https://www.youtube.com/embed/UG-3V2G_uow",
+        "https://www.youtube.com/embed/-IGH4PvXh0I",
+        "https://www.youtube.com/embed/ENdzbDFPFRg",
+        "https://www.youtube.com/embed/0i7R-0B3aJ0",
+        "https://www.youtube.com/embed/Qa_h4YMkpQc",
+        "https://www.youtube.com/embed/WRfz27sCJ7I",
+        "https://www.youtube.com/embed/V2FjvQK0Y08",
+        "https://www.youtube.com/embed/WEWiHYb2Zoc",
+        "https://www.youtube.com/embed/z8Db_T_7J6Y",
+        "https://www.youtube.com/embed/NguOwpsoSIY",
+        "https://www.youtube.com/embed/sULkSAPIpEc",
+        "https://www.youtube.com/embed/ZYsZYWPx43I",
+        "https://www.youtube.com/embed/Q0kAefGRqcE",
+        "https://www.youtube.com/embed/uCf1tIiMUzc",
+        "https://www.youtube.com/embed/M5L2xozFplU",
+        "https://www.youtube.com/embed/7pZNxg9FlWs",
+        "https://www.youtube.com/embed/kzsWRAef9xw",
+        "https://www.youtube.com/embed/uj5B4mNyT0Y",
+        "https://www.youtube.com/embed/5Nf-LeAFN4c",
+        "https://www.youtube.com/embed/_cDc7y4Ffds",
+        "https://www.youtube.com/embed/XkBAzqB_RfA",
+        "https://www.youtube.com/embed/SCPuRzP8zvY",
+        "https://www.youtube.com/embed/QjzYDXE4IfU",
+        "https://www.youtube.com/embed/Pa3GUvUu7t0",
+        "https://www.youtube.com/embed/AaFTLyTAp8I",
+        "https://www.youtube.com/embed/VwJ_TAQonM8",
+        "https://www.youtube.com/embed/ivnWPMuR9g4",
+        "https://www.youtube.com/embed/r1vk9YfU1ss",
+        "https://www.youtube.com/embed/YvQ--7gAYA8",
+        "https://www.youtube.com/embed/mDKmMeTg43o",
+        "https://www.youtube.com/embed/ottUGGymEos",
+        "https://www.youtube.com/embed/swFg36Jnrdo",
+        "https://www.youtube.com/embed/Q1jXrr_a8kQ",
+        "https://www.youtube.com/embed/pQ5_f5-gTQ8",
+        "https://www.youtube.com/embed/1RY_2Dkx0jQ",
+        "https://www.youtube.com/embed/kb0qNBAYocY",
+        "https://www.youtube.com/embed/1ZfjMfsp7HY",
+        "https://www.youtube.com/embed/9BjGZDHPdmU",
+        "https://www.youtube.com/embed/aI47v9jiJkc",
+        "https://www.youtube.com/embed/7vpzb7EmURE",
+        "https://www.youtube.com/embed/LM710IZ8y0U",
+        "https://www.youtube.com/embed/ub1DeUJ3IBg",
+        "https://www.youtube.com/embed/Zm774EOLS1c",
+        "https://www.youtube.com/embed/GmvJJc7FhoU",
+        "https://www.youtube.com/embed/adFXu9p2TgM",
+        "https://www.youtube.com/embed/6k-ZEDtYQc4",
+        "https://www.youtube.com/embed/eeaFvGs_D3Y",
+        "https://www.youtube.com/embed/26gfqMQ7vbg",
+        "https://www.youtube.com/embed/QyIC0eTeMjw",
+        "https://www.youtube.com/embed/ZcDi3OpsKtw",
+        "https://www.youtube.com/embed/WngdhZ5zFCk",
+        "https://www.youtube.com/embed/pmaQWX2U-Ds",
+        "https://www.youtube.com/embed/3w8zSwtdSiE",
+        "https://www.youtube.com/embed/8stQBkqyPos",
+        "https://www.youtube.com/embed/v0hVvAEx2W4",
+        "https://www.youtube.com/embed/9tuJpduYAFY",
+        "https://www.youtube.com/embed/YuiJ62jvSdE",
+        "https://www.youtube.com/embed/xjkPc0lGlGg",
+        "https://www.youtube.com/embed/PNU9fnUYzA4",
+        "https://www.youtube.com/embed/Tj9dsnVk5Gk",
+        "https://www.youtube.com/embed/tPcXPNL5aC8",
+        "https://www.youtube.com/embed/M595NaqDupI",
+        "https://www.youtube.com/embed/0gX1Hn2kRnU",
+        "https://www.youtube.com/embed/IyXe8ozjEFs",
+        "https://www.youtube.com/embed/8k-UHSTbx3E",
+        "https://www.youtube.com/embed/4vbDXVe12rw",
+        "https://www.youtube.com/embed/iwHPvK2K7VM",
+        "https://www.youtube.com/embed/_z1_3nwoQNA",
+        "https://www.youtube.com/embed/wlOfonJgDm0",
+        "https://www.youtube.com/embed/dsddkk0Ij3U",
+        "https://www.youtube.com/embed/hfKU5jAstpE",
+        "https://www.youtube.com/embed/sxUhq6LtDFs",
+        "https://www.youtube.com/embed/v8hwLUQyg4c",
+        "https://www.youtube.com/embed/mR0lAfw-1ng",
+        "https://www.youtube.com/embed/5bfb2YL7gh8"
     ];
 
     const grid = document.getElementById('buttonsGrid'); 
@@ -107,7 +197,7 @@
         btn.className = 'ep-btn'; 
         
         let epNum = index + 1;
-        btn.innerText = epNum; 
+        btn.innerText = epNum; // عرض رقم الحلقة فقط
         
         btn.onclick = function() { 
             window.open(popupAdLink, '_blank');
